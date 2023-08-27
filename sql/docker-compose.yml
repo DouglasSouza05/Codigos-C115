@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: douglas
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: quizdb
+      # NEW_USER: douglas
+      # NEW_USER_PASSWORD: root
+    volumes:
+      - ./dataPostgres:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"

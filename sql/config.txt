@@ -1,0 +1,19 @@
+Comandos para subir e parar o Docker:
+
+docker-compose up -d
+docker-compose down
+
+Comando para ver os logs:
+
+docker-compose logs db
+
+Comando para ver se o Docker está rodando:
+
+docker-compose ps
+
+Comando para ver o Banco de Dados e a tabela criada no VScode:
+
+docker exec -it sql-db-1 psql -U postgres -d quizdb
+\dt
+SELECT * FROM questions;
+\q
